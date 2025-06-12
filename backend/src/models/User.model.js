@@ -80,7 +80,6 @@ userSchema.methods.generateAccessToken = async function () {
         process.env.ACCESS_TOKEN_SECRET,
         { expiresIn: process.env.ACCESS_TOKEN_EXPIRY },
     );
-    console.log("user.model.js line 83", typeof accessToken);
     return accessToken;
 };
 

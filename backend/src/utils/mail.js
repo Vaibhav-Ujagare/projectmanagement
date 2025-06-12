@@ -96,9 +96,3 @@ export const resetPasswordVerificationMailGenContent = (
         },
     };
 };
-
-// sendEmail({
-//     email: user.email,
-//     subject: "test",
-//     mailGenContent: emailVerificationMailGenContent(username, `${url}`),
-// });

@@ -9,7 +9,6 @@ import {
     resendEmailVerificationMailGenContent,
     resetPasswordVerificationMailGenContent,
 } from "../utils/mail.js";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
@@ -42,7 +41,7 @@ const registerUser = asyncHandler(async (req, res) => {
     // console.log(req.files?.avatar[0]?.path);
     const avatar = await uploadOnCloudinary(avatarLocalPath);
     console.log(avatar);
-    
+
     // if (!avatar) {
     //     throw new ApiError(401, "Error while uploading file");
     // }
@@ -177,8 +176,6 @@ const loginUser = asyncHandler(async (req, res) => {
             200,
             {
                 user: loggedInUser,
-                accessToken,
-                refreshToken,
             },
             "User Logged In Successfully",
         ),
